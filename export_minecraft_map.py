@@ -70,19 +70,6 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output", help = "Example: Output\\File\\minecraft_map.png")
 
     argument = parser.parse_args()
-    display = False
-    output = None
 
-    if argument.display:
-        display_string = str(argument.display).strip().lower()
-        if display_string in ('true', 'yes', 'y', '1'):
-            display = True
-        elif display_string in ('false', 'no', 'n', '0'):
-            display = False
-        else:
-            # Handle cases where the string doesn't match expected values
-            raise ValueError(f"Invalid truth value: '{display_string}'")
-    if argument.output:
-        output = argument.output
-
-    export_map(argument.input, display, output)
+    DISPLAY = str(argument.display).strip().lower() in ('true', 'yes', 'y', '1')
+    export_map(argument.input, DISPLAY, argument.output)

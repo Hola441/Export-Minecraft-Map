@@ -34,7 +34,7 @@ python export_minecraft_map.py <input_map_file> [options]
 | Argument | Description |
 |----------|----------|
 | input_map_file | Path to the Minecraft .dat map file (e.g. Input/File/map_0.dat). |
-| -d, --display | Whether to open the image after creating it. Accepts: true, yes, y, 1 or false, no, n, 0. |
+| -d, --display | Whether to open the image after creating it. Accepted values to display the image: true, yes, y, 1 |
 | -o, --output | Path to save the output image (e.g. Output/File/minecraft_map.png). If omitted, the image will not be saved. |
 
 ### Examples
