@@ -1,6 +1,7 @@
 """Script used to download a minecraft map as an image file."""
 
 import argparse
+import os
 from nbtlib import load
 from PIL import Image
 
@@ -30,6 +31,10 @@ def export_map(dat_file, display_image = False, output_file = None):
         output_file: File location to save image.
             If left blank or set to None, the image is not saved.
     """
+
+    if not os.path.exists(dat_file):
+        print(f"Error: No map file exists at: {dat_file}")
+        return
 
     # Load NBT data
     nbt_data = load(dat_file)
